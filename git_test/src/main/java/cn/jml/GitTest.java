@@ -14,6 +14,7 @@ public class GitTest {
         System.out.println(a);
         System.out.println(i);
         System.out.println("11232131");
+        System.out.println("asdfasfasfd");
 
     }
 }
