@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>v-on:事件修饰符</title>
+		<style>
+			#div {
+				background-color: red;
+				width: 300px;
+				height: 300px;
+			}
+		</style>
+		<script src="js/vuejs-2.5.16.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+		<form  @submit.prevent action="https://hao.360.com/?src=lm&ls=n2b2986f18b" method="post"  >
+			<input type="submit" value="提交">
+		</form>
+
+
+			<hr/>
+			<div @mouseover="fun1" id="div">
+				<textarea @mouseover.stop="fun2($event)">这是一个文件域</textarea>
+
+			</div>
+
+			<!--			js方式:-->
+<!--		<form action="https://hao.360.com/?src=lm&ls=n2b2986f18b" method="post" onsubmit="return fun()">-->
+<!--			<input type="submit" value="提交">-->
+<!--		</form>-->
+		</div>
+	</body>
+	<script>
+		//view model
+      new Vue({
+		  el:"#app",
+		  methods:{
+			  fun1:function () {
+				  alert("鼠标移动到了div上")
+			  },
+			  fun2:function (event) {
+				  alert("鼠标移动到了text上")
+			  }
+		  }
+	  })
+		// js方式:
+		// function fun() {
+		// 	alert(1)
+		// 	return false;
+		// }
+		
+		
+	</script>
+
+</html>

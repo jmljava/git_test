@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>v-for遍历数组</title>
+		<script src="js/vuejs-2.5.16.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+			<li v-for="(item) in arr">{{item }}</li>
+			</ul>
+			<hr/>
+
+			<table>
+				<tr>
+					<td>id</td>
+					<td>姓名</td>
+					<td>年龄</td>
+				</tr>
+				<tr>
+					<td  v-for="(pro) in person">{{pro}}</td>
+				</tr>
+			</table>
+			<hr/>
+
+			<table border="1">
+				<tr>
+					<td>序号</td>
+					<td>id</td>
+					<td>姓名</td>
+					<td>年龄</td>
+				</tr>
+				<tr v-for="(person,index) in persons">
+					<td>{{index}}</td>
+					<td >{{person.id}}</td>
+					<td >{{person.username}}</td>
+					<td >{{person.age}}</td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	<script>
+		//view model
+		new Vue({
+			el:"#app",
+			data:{
+				arr:[23,24,25],
+				person:{
+					id:5,
+					username:"jack",
+					age:34
+				},
+				persons:[
+					{id:3,username:"jack",age:23},
+					{id:4,username:"tom",age:24},
+					{id:5,username:"targe",age:25}
+				]
+			}
+		})
+	</script>
+</html>
